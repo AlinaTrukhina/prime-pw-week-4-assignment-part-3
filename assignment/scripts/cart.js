@@ -88,3 +88,19 @@ console.log(basket.length);
 console.log('test isFull - expect true', isFull());
 
 console.log(listItems(basket));
+
+// create function that removes item
+function removeItem(item) {
+    const toRemove = basket.indexOf(item);
+    if (toRemove === null) {
+        return null;
+    } else {
+        basket.splice(toRemove,1);
+        return 'removed ' + item;
+    }
+}
+
+// test removeItem
+
+console.log('test removeItem - expect removed onion:', removeItem('onion'));
+console.log(basket);
