@@ -9,9 +9,14 @@ const maxItems = 5;
 // create function to add items to basket
 function addItem(item) {
 //    item.toString();
+    if (isFull(basket) === false){
         basket.push(item);
         return true;
-    } 
+        } else {
+        console.log('No room!');
+        return false;
+        }
+} 
 
 //test function
 console.log('test addItem - expect true', addItem('cucumber'));
@@ -24,7 +29,8 @@ console.log(basket);
 function listItems(basket) {
     for (let n in basket) {
         console.log(basket[n]);
-    }
+    }  return false;
+        
 }
 
 // test listItems
@@ -65,11 +71,17 @@ function isFull() {
 
 console.log('test isFull - expect false', isFull());
 
+// fill basket back up
 console.log('test addItem - expect true', addItem('cucumber'));
 console.log('test addItem', addItem('tomato'));
 console.log('test addItem', addItem('onion'));
 console.log('addItem', addItem('sour cream'));
 console.log('addItem', addItem('dill'));
+
+// check # of items
+console.log(listItems(basket));
+
+// see if the addItems function will add items if basket is full
 console.log('addItem', addItem('dill-2'));
 console.log(basket.length);
 
