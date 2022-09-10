@@ -4,6 +4,7 @@ console.log('***** Cart Functions *****');
 
 // create basket
 const basket = [];
+const maxItems = 5;
 
 // create function to add items to basket
 function addItem(item) {
@@ -36,7 +37,6 @@ function empty() {
     while (basket.length) {
         basket.pop();
     } 
-
     console.log('basket emptied');
 }
 
@@ -44,3 +44,35 @@ function empty() {
 
 empty();
 console.log(basket);
+
+// create isFull function
+/*
+function isFull() {
+    return ((basket.length < maxItems) ? false : true);
+}
+*/
+
+function isFull() {
+    if (basket.length < maxItems) {
+        return false;
+    } else {
+        return true;
+        }
+}
+
+
+// test isFull 
+
+console.log('test isFull - expect false', isFull());
+
+console.log('test addItem - expect true', addItem('cucumber'));
+console.log('test addItem', addItem('tomato'));
+console.log('test addItem', addItem('onion'));
+console.log('addItem', addItem('sour cream'));
+console.log('addItem', addItem('dill'));
+console.log('addItem', addItem('dill-2'));
+console.log(basket.length);
+
+console.log('test isFull - expect true', isFull());
+
+console.log(listItems(basket));
