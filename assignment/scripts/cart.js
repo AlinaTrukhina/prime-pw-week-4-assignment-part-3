@@ -13,8 +13,8 @@ function addItem(item) {
     } 
 
 //test function
-console.log('test addItem', addItem('cucumber'));
-// console.log(bread); this returns an error saying bread is not defined.
+console.log('test addItem - expect true', addItem('cucumber'));
+// console.log(bread) - expect error; this returns an error saying bread is not defined.
 console.log('test addItem', addItem('tomato'));
 console.log('test addItem', addItem('onion'));
 console.log(basket);
@@ -29,3 +29,18 @@ function listItems(basket) {
 // test listItems
 listItems(basket);
 console.log(listItems(basket));
+
+// create function to empty
+
+function empty() {
+    while (basket.length) {
+        basket.pop();
+    } 
+
+    console.log('basket emptied');
+}
+
+// test function "empty"
+
+empty();
+console.log(basket);
