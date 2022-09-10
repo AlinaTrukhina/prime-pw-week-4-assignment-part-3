@@ -5,11 +5,16 @@ console.log('***** Cart Functions *****');
 // create basket
 const basket = [];
 
-// creat function to add items to basket
+// create function to add items to basket
 function addItem(item) {
-    basket.push(item);
-    return true;
-}
+    item.toString();
+        basket.push(item);
+        return true;
+    } 
 
+//test function
 console.log('test addItem', addItem('cucumber'));
+console.log(bread);
 console.log(basket);
+
+// create function to list items
